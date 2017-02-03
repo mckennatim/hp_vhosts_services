@@ -1,0 +1,43 @@
+{
+  "name": "demiot-server3",
+  "version": "1.0.0",
+  "description": "all pckages used are in /demiot/package.json and listed in package.in_demiot.json",
+  "main": "index.js",
+  "scripts": {
+    "start": "set NODE_ENV=development&& nodemon lib/index.js --watch lib",
+    "tls": "set NODE_ENV=development&& node --tls-cipher-list='TLS_RSA_WITH_AES_128_CBC_SHA:RC4-MD5' lib/index.js ",
+    "notls": "set NODE_ENV=production&& node lib/index.js ",
+    "test": "mocha --require ./test/test_helper.js --recursive --slow 4",
+    "test:watch": "npm run test -- --watch"
+  },
+  "keywords": [],
+  "author": "Timothy S. McKenna <mckenna.tim@gmail.com> (http://mckennatim.github.io/mckennatim/)",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "1.15.0",
+    "cookie-parser": "1.4.1",
+    "ejs": "2.4.1",
+    "expect.js": "0.3.1",
+    "express": "4.13.3",
+    "express-session": "1.13.0",
+    "http": "0.0.0",
+    "jwt-simple": "0.5.0",
+    "moment": "2.12.0",
+    "moment-timezone": "0.5.2",
+    "mongoose": "4.4.9",
+    "morgan": "1.6.1",
+    "mosca": "1.0.1",
+    "mysql": "2.10.2",
+    "nodemailer": "2.3.0",
+    "passport": "0.3.2",
+    "passport-http-bearer": "1.0.1",
+    "passport-local": "1.0.0",
+    "passport-localapikey": "0.0.3",
+    "path": "0.12.7",
+    "should": "8.2.2",
+    "socket.io": "1.4.5",
+    "superagent": "1.8.2",
+    "tracer": "0.8.3",
+    "underscore": "1.8.3"
+  }  
+}
