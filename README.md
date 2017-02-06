@@ -1,13 +1,18 @@
-# vhosts
+# hp_vhosts_services for sslvh.tm
 ## wamp apache commands
 
 ## tags
+### 06xxProxy
+Device clients send and receive messages from browser clients. The device messages goes to a local broker `/home/iot/services/serverpi/piBroker.js`  which is also acts as a broker for `xxProxy.js` via its `piClient`. Meanwhile a secured non-local sever app `C:\wamp\vhosts\ssl\sb2\geniot\server\servertest\basicsMQTTsl.js` acts as TLS broker for browser clients like `C:\wamp\vhosts\ssl\sb2\geniot\client\raw\basicMQTTwssHP.html` and for `/home/iot/services/serverpi/xxProxy.js`'s `xxClient` side secure client.
+
+Transport is via wss with the secure non-local server connected to its certs and keys. The browser clients show a secure connection `Sec-WebSocket-Protocol:mqttv3.1` and the node client has a copy of the secure server's `/home/iot/certs/hpCaChain.pem` which is the certificat authority vouching for the server's certs.
+
 ### 05esp_pi_sb-hp_ssl
-Re-did the self signed certificates in a way that created a [ca signing authority](https://wiki.sitebuilt.net/index.php?title=Openssl#creating_a_certificate_signing_authority_ca_.28and_cert_and_key.29) that the node clients can use. 
+Re-did the self signed certificates in a way that created a [ca signing authority](https://wiki.sitebuilt.net/index.php?title=Openssl#creating_a_certificate_signing_authority_ca_.28and_cert_and_key.29) that the node clients can use. (the other way for the client to show it knows the server is to use the fingerprint)
 
 #### related repositories/machines
 https://github.com/mckennatim/pi2_iot_services
-https://github.com/mckennatim/sb_vhosts_services
+https://github.com/mckennatim/hp_vhosts_services
 pi2, services.sitebuilt.net
 
 

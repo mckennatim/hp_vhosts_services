@@ -35,11 +35,11 @@ server.on('clientConnected', function(client) {
   console.log('client connected', client.id);  
    
 });
-setInterval(function () { 
-  server.publish({topic: 'fromBroker', payload: 'one message from broker'}, function(){
-    console.log('sent message')
-  })
-}, 4000); 
+// setInterval(function () { 
+//   server.publish({topic: 'fromBroker', payload: 'one message from hpBroker'}, function(){
+//     console.log('sent message')
+//   })
+// }, 4000); 
 
 // fired when a message is received
 server.on('published', function(packet, client) {
